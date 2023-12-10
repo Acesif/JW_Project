@@ -1,0 +1,24 @@
+*{
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:#c2d4dd;
+  box-sizing: border-box;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.title,tr{
+  text-align: center;
+}
+.title{
+  margin: 20px 0;
+}
+table{
+  margin: 0 150px;
+}
+table,tr,td{
+  border: 1px solid black;
+}

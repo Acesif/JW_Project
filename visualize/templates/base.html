@@ -4,8 +4,41 @@
     <title>JWP</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   </head>
   <body>
-    <pre>{{ json_data|safe }}</pre>
+    <div class="container">
+      <h1 class="title">Janata Wifi Fullstack App</h1>
+      <table>
+          <thead>
+              <tr>
+                  <th>Date</th>
+                  <th>Trade Code</th>
+                  <th>High</th>
+                  <th>Low</th>
+                  <th>Open</th>
+                  <th>Close</th>
+                  <th>Volume</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for item in json_data %}
+                <tr>
+                    <td>{{ item.date }}</td>
+                    <td>{{ item.trade_code }}</td>
+                    <td>{{ item.high }}</td>
+                    <td>{{ item.low }}</td>
+                    <td>{{ item.open }}</td>
+                    <td>{{ item.close }}</td>
+                    <td>{{ item.volume }}</td>
+                </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+    </div>
   </body>
 </html>

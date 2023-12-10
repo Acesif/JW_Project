@@ -1,6 +1,6 @@
 import json
 import copy
-with open('./stock_market_data.json') as dataf, open('output.json', 'w') as out:
+with open('stock_market_data.json') as dataf, open('output.json', 'w') as out:
     data = json.load(dataf)
     newdata = []
     for i, block in enumerate(data):

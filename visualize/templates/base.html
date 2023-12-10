@@ -26,15 +26,17 @@
               </tr>
           </thead>
           <tbody>
+              {% for item in items %}
                 <tr>
-                    <td> item.date </td>
-                    <td> item.trade_code </td>
-                    <td> item.high </td>
-                    <td> item.low </td>
-                    <td> item.open </td>
-                    <td> item.close </td>
-                    <td> item.volume </td>
+                  <td>{{ item.date }}</td>
+                  <td>{{ item.trade_code }}</td>
+                  <td>{{ item.high }}</td>
+                  <td>{{ item.low }}</td>
+                  <td>{{ item.open }}</td>
+                  <td>{{ item.close }}</td>
+                  <td>{{ item.volume }}</td>
                 </tr>
+              {% endfor %}
           </tbody>
       </table>
     </div>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    {% load static%}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'chart.css'%}">
+  </head>
+  <body>
+    <label> Choose a Trade Code:</label>
+    <select id="trade_code">
+      {% for i in tc %}
+      <option value={{i}}>{{i}}</option>
+      {% endfor %}
+    </select>
+    <div>
+      {{ chart|safe }}  
+    </div>
+    <div>
+      <p>Truncated to use data from top 100 entries</p>
+    </div>
+  </body>
+</html>

@@ -10,7 +10,6 @@ def home(request):
 
 def chart(request):
     items = stockModel.objects.all() 
-    trade_code = set([i.trade_code for i in items[:100]])
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     fig.add_trace(
@@ -30,5 +29,5 @@ def chart(request):
     fig.update_xaxes(title_text="Date")
 
     chart = fig.to_html()
-    return render(request, 'chart.html', {'chart': chart, 'tc': trade_code})
+    return render(request, 'chart.html', {'chart': chart} )
 

@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="{% static 'chart.css'%}">
   </head>
   <body>
-    <label> Choose a Trade Code:</label>
-    <select id="trade_code">
-      {% for i in tc %}
-      <option value={{i}}>{{i}}</option>
-      {% endfor %}
-    </select>
     <div>
       {{ chart|safe }}  
     </div>

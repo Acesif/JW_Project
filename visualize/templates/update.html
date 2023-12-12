@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add New</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'change.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <h1>Update Entry</h1>
+    <form action="{% url 'upreq' entry.id %}" method="post">
+      {% csrf_token %}
+      <label>
+        <p>Date</p>
+        <input type="text" name="date" value="{{entry.date}}">
+      </label>
+      <label>
+        <p>Trade Code</p>
+        <input type="text" name="trade_code" value="{{entry.trade_code}}">
+      </label>
+      <label>
+        <p>High</p>
+        <input type="text" name="high" value="{{entry.high}}">
+      </label>
+      <label>
+        <p>Low</p>
+        <input type="text" name="low" value="{{entry.low}}">
+      </label>
+      <label>
+        <p>Open</p>
+        <input type="text" name="open" value="{{entry.open}}">
+      </label>
+      <label>
+        <p>Close</p>
+        <input type="text" name="close" value="{{entry.close}}">
+      </label>
+      <label>
+        <p>Volume</p>
+        <input type="text" name="volume" value="{{entry.volume}}">
+      </label>
+      <button type="submit">Update</button>
+    </form>  
+  </body>
+</html>

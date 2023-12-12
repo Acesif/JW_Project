@@ -9,11 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <div class="container">
       <h1 class="title">Janata Wifi Fullstack App</h1>
-      <a href="/chart">View Chart</a>
+      <div class="chart">
+        {{ chart|safe }}  
+      </div>
+      <hr>
+      <a href="{% url 'add' %}">Add New</a>
       <table>
           <thead>
               <tr>
@@ -36,6 +41,16 @@
                   <td>{{ item.open }}</td>
                   <td>{{ item.close }}</td>
                   <td>{{ item.volume }}</td>
+                  <td class='btn'>
+                    <a href="update/{{item.id}}">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                  <td class='btn'>
+                    <a href="delete/{{item.id}}">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                  </td>
                 </tr>
               {% endfor %}
           </tbody>

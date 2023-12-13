@@ -1,0 +1,46 @@
+*{
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+hr{
+  margin-bottom: 20px;
+}
+.chart{
+  align-self: center;
+  width: 70%;
+}
+.title,tr{
+  text-align: center;
+}
+.title{
+  margin: 20px 0;
+}
+table{
+  margin: 0 150px;
+}
+table,tr,td{
+  border: 1px solid black;
+}
+.btn{
+  border: none;
+}
+.btn a{
+  all: unset;
+  font-size: 20px;
+  border: inherit;
+}
+a{
+  color: black;
+  text-decoration: none;
+  align-self: center;
+  padding: 1rem 2rem;
+  margin-bottom: 20px;
+  border: 1px black solid;
+}

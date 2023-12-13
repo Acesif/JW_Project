@@ -15,6 +15,14 @@
     <div class="container">
       <h1 class="title">Janata Wifi Fullstack App</h1>
       <div class="chart">
+        <form>
+          <select name="trade_code">
+            {% for c in codes %}
+              <option value={{c}}>{{c}}</option>
+            {% endfor %}
+          </select>
+          <button type="submit">Filter</button>
+        <form>
         {{ chart|safe }}  
       </div>
       <hr>

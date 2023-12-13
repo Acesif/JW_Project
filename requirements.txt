@@ -3,6 +3,8 @@ beautifulsoup4==4.12.2
 contourpy==1.2.0
 cycler==0.12.1
 Django==5.0
+django-extensions==3.2.3
+django-icons==23.3
 fonttools==4.46.0
 kiwisolver==1.4.5
 numpy==1.26.2

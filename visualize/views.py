@@ -5,19 +5,21 @@ from plotly.subplots import make_subplots
 
 def home(request):
     items = stockModel.objects.all()
-    unique = set([i.trade_code for i in items[:100]])
+    unique = set([i.trade_code for i in items])
     fig = make_subplots(specs=[[{"secondary_y": True}]])
-    latest = items[::-1]
     tc = request.GET.get('trade_code')
     if tc:
         items = items.filter(trade_code__icontains=tc)
+    else:
+        tc = "Select Filter"
+    latest = items[::-1]
     fig.add_trace(
-            go.Scatter(x=[i.date for i in items[:100]], y=[i.close for i in items[:100]], name="close"),
+            go.Scatter(x=[i.date for i in items], y=[i.close for i in items], name="close"),
         secondary_y=True,
     )
 
     fig.add_trace(
-            go.Bar(x=[i.date for i in items[:100]], y=[i.volume for i in items[:100]], name="volume"),
+            go.Bar(x=[i.date for i in items], y=[i.volume for i in items], name="volume"),
         secondary_y=False,
     )
 
@@ -26,7 +28,7 @@ def home(request):
     )
 
     chart = fig.to_html()
-    return render(request, 'base.html', {"items": latest[:20], "chart": chart,'codes': unique})
+    return render(request, 'base.html', {"items": latest, "chart": chart,'codes': unique, 'tc':tc})
 
 def add(request):
     return render(request,'add.html')

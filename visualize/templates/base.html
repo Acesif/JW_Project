@@ -13,10 +13,11 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title">Janata Wifi Fullstack App</h1>
+      <h1 class="title">Janata Wifi Fullstack Developer Test</h1>
       <div class="chart">
         <form>
           <select name="trade_code">
+            <option value={{tc}} hidden>{{tc}}</option>
             {% for c in codes %}
               <option value={{c}}>{{c}}</option>
             {% endfor %}
@@ -63,7 +64,6 @@
               {% endfor %}
           </tbody>
       </table>
-      <h5>Truncated to show top 20 items</h5>
     </div>
   </body>
 </html>

@@ -11,7 +11,7 @@ Despite having multiple graph plotting options, I chose plotly graphing library 
 
 ### Challenges I faced
 
-Learning to migrate JSON data into sqlite database costed me several hours scouring through different videos, articles and stackoverflow threads. But finally, I figured out how to load the data into sql database after some preprocessing. 
+Learning to migrate JSON data into sqlite database costed me several hours scouring through different videos, articles and stackoverflow threads. But finally, I figured out how to load the data into sqlite database after some preprocessing. 
 
 I did the preprocessing using a python script which can be found inside the `json_to_sqlite_migration` folder. I kept the processed json file in the folder as well just in case you would want to inspect it. 
 
